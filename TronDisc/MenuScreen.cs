@@ -21,12 +21,12 @@ namespace TronDisc
 
         private void startButton_Click(object sender, EventArgs e)
         {
-
+            Form1.ChangeScreen(this, new GameScreen());
         }
 
         private void instructionsButton_Click(object sender, EventArgs e)
         {
-
+            Form1.ChangeScreen(this, new InstructionsScreen());
         }
     }
 }
