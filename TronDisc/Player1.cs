@@ -20,6 +20,15 @@ namespace TronDisc
             y = _y;
         }
 
+        public bool GotDisc(Disc d)
+        {
+            if (x == d.x && y == d.y)
+            {
+                return true;
+            }
+            return false;
+        }
+
         public void Move(string direction, Size ss)
         {
             if (direction == "left")

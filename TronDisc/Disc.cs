@@ -14,6 +14,8 @@ namespace TronDisc
         public int x, y;
         public int xspeed, yspeed;
 
+        Disc d;
+
         public Disc(int _x, int _y, int _xspeed, int _yspeed)
         {
             x = _x;

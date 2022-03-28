@@ -37,7 +37,7 @@ namespace TronDisc
 
             player1 = new Player1(350, 100);
             player2 = new Player2(350, 400);
-            disc = new Disc(370, 250);
+            disc = new Disc(370, 250, 10, 10);
         }
 
         private void GameScreen_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
@@ -105,25 +105,25 @@ namespace TronDisc
         private void gameTimer_Tick(object sender, EventArgs e)
         {
             //Player 1
-            if(leftArrowDown == true)
+            if (leftArrowDown == true)
             {
                 player1.Move("left", screenSize);
             }
-            if(rightArrowDown == true)
+            if (rightArrowDown == true)
             {
                 player1.Move("right", screenSize);
             }
             //Player 1 Throw
-            if(downArrowDown == true)
+            if (downArrowDown == true)
             {
-                
+
             }
             //Player 2
-            if(aDown == true)
+            if (aDown == true)
             {
                 player2.Move("left", screenSize);
             }
-            if(dDown == true)
+            if (dDown == true)
             {
                 player2.Move("right", screenSize);
             }
@@ -132,6 +132,19 @@ namespace TronDisc
             {
 
             }
+
+            if (player1.GotDisc(disc))
+            {
+                disc.x = player1.x;
+                disc.y = player1.y;
+            }
+            else if (player2.GotDisc(disc))
+            {
+                disc.x = player2.x;
+                disc.y = player2.y;
+            }
+
+
             Refresh();
         }
     }
